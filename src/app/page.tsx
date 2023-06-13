@@ -9,7 +9,7 @@ const mainStyle = {
 }
 
 export default async function Home() {
-  const response = await fetch('http://localhost:3000/api/quotes/random', {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API}/quotes/random`, {
     cache: 'no-store',
   })
   const json: { quote: string } = await response.json()
